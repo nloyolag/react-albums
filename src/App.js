@@ -1,6 +1,7 @@
 import React from 'react';
+import Album from './components/album';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
@@ -18,7 +19,10 @@ function App() {
         >
           Learn React
         </a>
+        <Album
+          title="A" artist="B" date="C" genre="D" ></Album>
       </header>
+      
     </div>
   );
 }
