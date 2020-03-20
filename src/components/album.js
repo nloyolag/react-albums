@@ -2,7 +2,7 @@ import React from 'react';
 
 const Album = props => {
   return (
-    <div class="album">
+    <div className="album">
       <img src="" alt="Album cover" />
       <h2>{props.title}</h2>
       <h3>{props.artist}</h3>
