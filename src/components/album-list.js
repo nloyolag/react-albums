@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import {albumsData} from '../datasource/albums';
-import Album from './album';
+import React, { useState, useEffect } from "react";
+import { albumsData } from "../datasource/albums";
+import Album from "./album";
 
 const AlbumList = () => {
   const [albums, setAlbums] = useState([]);
@@ -9,13 +9,16 @@ const AlbumList = () => {
     setAlbums(albumsData);
   }, []);
 
-  return albums.map((album) =>
-    <Album key={album.title + '_' + album.artist}
-            title={album.title}
-            artist={album.artist}
-            date={album.date}
-            genre={album.genre} />
-  );  
-}
+  return (
+    <div className="albumsList">
+      {albums.map(album => (
+        <Album
+          key={album.title + "_" + album.artist}
+          album={album}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default AlbumList;
