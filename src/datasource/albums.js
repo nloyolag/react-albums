@@ -1,4 +1,4 @@
-export const albums = [
+export const albumsData = [
   {
     title: "Quarantine",
     artist: "Laurel Halo",
