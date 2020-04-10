@@ -14,7 +14,7 @@ const AlbumContainer: React.SFC<AlbumContainerProps> = ({album}) => {
       <img src={albumImage} alt="Album cover" />
       <h2>{title}</h2>
       <h3>{artist}</h3>
-      <p>{date}</p>
+      <p>{date.toDateString()}</p>
       <p>{genre}</p>
     </div>
   );
