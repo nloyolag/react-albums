@@ -1,8 +1,13 @@
 import React from 'react';
 import albumImage from '../datasource/album.jpg';
+import { Album } from '../types';
 
-const Album = props => {
-  const {title, artist, date, genre} = props.album;
+interface AlbumContainerProps {
+  album: Album
+}
+
+const AlbumContainer: React.SFC<AlbumContainerProps> = ({album}) => {
+  const {title, artist, date, genre} = album;
 
   return (
     <div className="album">
@@ -15,4 +20,4 @@ const Album = props => {
   );
 }
 
-export default Album;
+export default AlbumContainer;

@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Search = ({onChange}) => {
+export interface SearchProps {
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+const Search: React.SFC<SearchProps> = ({onChange}) => {
   return (
     <form>
       <input type="text" className="input" onChange={onChange} placeholder="Search..." />

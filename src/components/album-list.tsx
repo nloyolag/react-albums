@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { albumsData } from "../datasource/albums";
-import Album from "./album";
+import AlbumContainer from "./album-container";
 import Search from "./search";
+import { Album } from "../types"
 
 const AlbumList = () => {
-  const [albums, setAlbums] = useState([]);
+  const [albums, setAlbums] = useState<Album[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const handleInputChange = (e) => {
-    setSearchQuery(e.target.value);
+  const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
+    setSearchQuery(e.currentTarget.value);
   }
 
   const filterAlbums = () => {
     const filteredAlbums = albumsData.filter(a =>
       Object.keys(a).some(
         k =>
-          a[k]
+          k
             .toString()
             .toLowerCase()
             .indexOf(searchQuery) !== -1
@@ -39,7 +40,7 @@ const AlbumList = () => {
       <div className="albumsList">
         {albums
           .map(album => (
-            <Album key={album.title + "_" + album.artist} album={album} />
+            <AlbumContainer key={album.title + "_" + album.artist} album={album} />
           ))}
       </div>
     </div>
